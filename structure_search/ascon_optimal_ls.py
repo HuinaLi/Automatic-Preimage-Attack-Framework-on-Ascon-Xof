@@ -288,12 +288,13 @@ if __name__ == '__main__':
     state = 320
     rate = 64
     ROUNDS = 4
-    R = declare_ring([Block('x', ROUNDS*state + (ROUNDS-1)*state + (ROUNDS-1)*state + rate  )], globals())
+    R = declare_ring([Block('x', ROUNDS*state + (ROUNDS-1)*state + state + (ROUNDS-2)*state + rate + state)], globals())
     A = [[R(x(i + r*state)) for i in range(state) ] for r in range(ROUNDS) ]               
     B = [[R(x(i + ROUNDS*state + r*state)) for i in range(state) ] for r in range(ROUNDS-1) ]         
     D = [[R(x(i + ROUNDS*state + (ROUNDS-1)*state + r*state)) for i in range(state) ] for r in range(1) ]  
-    Q = [[R(x(i + ROUNDS*state + (ROUNDS-1)*state + state + r*state)) for i in range(state) ] for r in range(ROUNDS-1) ]  
-    B0 = [R(x(i + ROUNDS*state + (ROUNDS-1)*state + (ROUNDS-2)*2*state)) for i in range(rate) ]
+    Q = [[R(x(i + ROUNDS*state + (ROUNDS-1)*state + state + r*state)) for i in range(state) ] for r in range(ROUNDS-2) ]  
+    B0 = [R(x(i + ROUNDS*state + (ROUNDS-1)*state + state + (ROUNDS-2)*state)) for i in range(rate) ]
+    k = [R(x(i + ROUNDS*state + (ROUNDS-1)*state + state + (ROUNDS-2)*state + rate)) for i in range(state) ]
     Qq = set()
 ################INV#########################
     # 3r: numvars A0--pspc-->B0--pl-->A1--pspc-->B1--pl-->A2
@@ -326,9 +327,9 @@ if __name__ == '__main__':
         for x in range(rate):
             if y in [1,2,3,4]:
                 Qq.add(A[0][index_xy(x,y)])
-    
     solver = DIMACS(filename = "/home/n2107349e/SAT/Ascon_tools/Ascon_ls/4r/ascon_ls_inv.cnf")
     e = CNFEncoder(solver, R)
     e(list(Qq))
     solver.write()
     logger.info("finished")
+    ## note that we make all 320 variables of D[0] equal to 0 in our model, so another 320 clauses will add into  anscon_ls_inv.cnf
