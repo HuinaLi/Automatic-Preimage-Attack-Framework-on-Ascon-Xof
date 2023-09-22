@@ -15,6 +15,8 @@ code files:
 
 6. read_and_ban_solution_ascon.py: the code to solve our model, we incorporate the concept of rotational symmetry here, in this way, the solver will exclude rotationally-equivalent solutions and continue searching for new ones that are distinct.
 
+7. combine_and_solve_ascon.sh: the code to help me automatically return all solutions with detailed search time.
+
 
 result folder:
 1. all_2r_quadratic_structures_de_27.log: the result to print all feasiable quadratic structures with de = df =27.
