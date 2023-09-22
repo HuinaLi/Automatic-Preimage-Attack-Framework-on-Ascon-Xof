@@ -9,7 +9,7 @@ Note that please first set up your SageMath environment and then run our python 
 
 How to set up SageMath environment?
 
-First step: conda setup
+First step: [conda setup]
 1. install miniconda: https://docs.conda.io/en/latest/miniconda.html
 ```bash Miniconda3-latest-Linux-x86_64.sh```
 Note: if you have error "UnicodeDecodeError: ‘ascii‘ codec can‘t decode byte", just type command:
