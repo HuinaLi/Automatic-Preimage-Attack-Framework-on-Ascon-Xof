@@ -15,7 +15,7 @@ code files:
 
 6. read_and_ban_solution_ascon.py: the code to solve our model, we incorporate the concept of rotational symmetry here, in this way, the solver will exclude rotationally-equivalent solutions and continue searching for new ones that are distinct.
 
-7. combine_and_solve_ascon.sh: the code to help me automatically return all solutions with detailed search time.
+Note: We suggest using a script file to automatically finish the above steps for conveniently obtaining all solutions.
 
 
 result folder:
