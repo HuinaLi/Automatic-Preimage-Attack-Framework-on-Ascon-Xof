@@ -395,7 +395,7 @@ CNF_b22a3 = [
 ]
 
 ## 7. n2: A1,k
-## [a0,a1,a2,a3,a4,k0,k1]
+## [a0,a1,a2,a3,a4,k0,k1] k0 = 1 means each sbox has 2 constrains; k1 = 1 means each sbox has 3 constrains
 ## consume dr in the second p_S
 ## 5
 CNF_n2 =[
