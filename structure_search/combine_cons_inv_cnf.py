@@ -2,7 +2,6 @@
 # open file
 f1 = open("/home/n2107349e/SAT/Ascon_tools/Ascon_ls/4r/ascon_ls_inv.cnf", "r")
 f2 = open("/home/n2107349e/SAT/Ascon_tools/Ascon_ls/4r/allcons.cnf", "r")
-#f3 = open("/home/n2107349e/SAT/preimage/two_keccak200_2r_sbox.cnf", "r")
 # file to write
 f4 = open("/home/n2107349e/SAT/Ascon_tools/Ascon_ls/4r/ascon_4r.cnf", "w")
 # buf to write
