@@ -3,14 +3,10 @@ set -e
 
 ShowUsage() {
     echo "Usage: "
-    echo "bash $0 ROUNDS AS DS alg_BASE CNFfile ASpath DSpath (solutions_count)"
     echo ""
-    echo "Example: (2 rounds, solve from the beginning)"
-    echo "bash $0 2 640  /home/n2107349e/SAT/preimage/Optimal_LS keccak224 /home/n2107349e/SAT/preimage/Optimal_LS/modify_AS_geq_640.cnf /home/n2107349e/SAT/preimage/Optimal_LS/modify_640DS_leq_448.cnf"
+    echo "bash $0 ROUNDS A D n0 B alg_BASE file A_path DQ_path n0_path B_path solutions_count"
     echo ""
-    echo "Example: (2 rounds, 9 solutions found, we want to solve from the 10th solution)"
-    echo "bash $0 2 640  /home/n2107349e/SAT/preimage/Optimal_LS keccak224 /home/n2107349e/SAT/preimage/Optimal_LS/modify_AS_geq_640.cnf /home/n2107349e/SAT/preimage/Optimal_LS/modify_640DS_leq_448.cnf 10"
-}
+  }
 
 if [ "${11}" = "" ] || [ "$1" = "--help" ] || [ "$1" = "help" ]; then
     ShowUsage $0
